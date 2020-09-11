@@ -31,6 +31,8 @@
                 Webcam.snap( function(data_uri) {
                 console.log(data_uri);
                 document.getElementById('disp').innerHTML = "<img src='"+data_uri+"'/>";
+                var audio = new Audio("audio/snap.wav");
+                audio.play();
                 });
             }
         </script>
