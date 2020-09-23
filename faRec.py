@@ -1,4 +1,5 @@
 # ensure to have (cmake/anaconda venv) setup
+# or
 # ensure you have dlib installed in your env
 import cv2
 import numpy as np
@@ -7,9 +8,9 @@ import serial
 
 inFace = input("Enter path to Face: ")
 if len(inFace)<1:
-    inFace = "resourses/images/lena.png"
+    inFace = "images/randLady.png"
 
-imgTr = fr.load_image_file("resourses/images/elon.jpg")
+imgTr = fr.load_image_file("images/elon.jpg")
 imgTr = cv2.cvtColor(imgTr,cv2.COLOR_BGR2RGB)
 imgTs = fr.load_image_file(inFace)
 imgTs = cv2.cvtColor(imgTs,cv2.COLOR_BGR2RGB)

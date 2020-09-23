@@ -14,13 +14,12 @@
         <div class="center">
             <div id="webcam"></div>
             <button onclick="snapshot()">Click</button>
-            <div id="disp"></div>
         </div>
 
         <script>
             Webcam.set({
                 width: 1080,
-                height: 720,
+                height: 608, 
                 image_format: 'jpeg',
                 jpeg_quality: 90
             });
@@ -28,12 +27,13 @@
             Webcam.attach('#webcam');
             
             function snapshot(){
+                document.getElementById('webcam').innerHTML = "";
                 Webcam.snap( function(data_uri) {
-                console.log(data_uri);
-                document.getElementById('disp').innerHTML = "<img src='"+data_uri+"'/>";
+                    console.log(data_uri);
+                    document.getElementById('webcam').innerHTML = "<img src='"+data_uri+"'/>";
+                });
                 var audio = new Audio("audio/snap.wav");
                 audio.play();
-                });
             }
         </script>
     </body>
